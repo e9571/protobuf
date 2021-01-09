@@ -1,0 +1,20 @@
+syntax = "proto3"; //protobuf3协议
+package msg;
+
+
+
+//请求
+message ChannelRq {
+string send = 1;
+}
+
+//响应
+message ChannelRp {
+string recv = 1;
+}
+
+
+//服务
+service Data {
+rpc GetChannel(ChannelRq) returns (ChannelRp);
+}
